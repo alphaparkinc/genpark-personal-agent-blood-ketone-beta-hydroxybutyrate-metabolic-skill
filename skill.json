@@ -1,0 +1,60 @@
+{
+  "name": "genpark-personal-agent-blood-ketone-beta-hydroxybutyrate-metabolic-skill",
+  "version": "1.0.0",
+  "title": "Blood Ketone Beta-Hydroxybutyrate (BHB) & Metabolic Switcher Skill",
+  "description": "Capillary blood beta-hydroxybutyrate (BHB) mmol/L telemetry ingestion, glucose-ketone index (GKI) cancer/longevity scoring, and targeted nutritional ketosis protocol synthesizer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "ketosis",
+    "bhb-ketones",
+    "metabolic-flexibility",
+    "gki-index",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_glucose_ketone_index",
+      "description": "Calculate Glucose-Ketone Index (GKI) from blood glucose (mg/dL) and BHB (mmol/L).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "blood_glucose_mg_dl": {
+            "type": "number"
+          },
+          "blood_bhb_mmol_l": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "blood_glucose_mg_dl",
+          "blood_bhb_mmol_l"
+        ]
+      }
+    },
+    {
+      "name": "prescribe_ketogenic_micro_protocol",
+      "description": "Synthesize exogenous ketone ester or C8 MCT oil protocol to accelerate transition into deep therapeutic ketosis.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_gki_tier": {
+            "type": "string",
+            "enum": [
+              "therapeutic_high",
+              "moderate_autophagy",
+              "mild_ketosis",
+              "not_in_ketosis"
+            ]
+          }
+        },
+        "required": [
+          "target_gki_tier"
+        ]
+      }
+    }
+  ]
+}
